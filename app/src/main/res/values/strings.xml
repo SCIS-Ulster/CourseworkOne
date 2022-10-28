@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CourseworkOne</string>
+    <string name="CarGame">Car Game</string>
+    <string name="aboutButton">About</string>
+    <string name="newCarGame">New Car Game</string>
+    <string name="brandButton">Identify The Brand</string>
+    <string name="hintsButton">Hints</string>
+    <string name="carButton">Identify The Car</string>
+    <string name="advancedLevel">Advanced Level</string>
+    <string name="textviewCorrect">CORRECT!</string>
+    <string name="textviewWrong">WRONG!</string>
+    <string name="HintsText">_____________</string>
+    <string name="SubmitButton">Submit</string>
+    <string name="NextButton">Next</string>
+</resources>
