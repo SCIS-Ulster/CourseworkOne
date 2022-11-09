@@ -18,9 +18,17 @@
         android:theme="@style/Theme.CourseworkOne"
         tools:targetApi="31">
         <activity
-            android:name=".Hints"
+            android:name=".Advanced"
             android:exported="false"
             android:parentActivityName=".NewGame"/>
+        <activity
+            android:name=".IdentifyTheCar"
+            android:exported="false"
+            android:parentActivityName=".NewGame" />
+        <activity
+            android:name=".Hints"
+            android:exported="false"
+            android:parentActivityName=".NewGame" />
         <activity
             android:name=".IdentifyTheBrand"
             android:exported="false"

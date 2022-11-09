@@ -5,16 +5,9 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:text="@string/aboutMyName"
         android:textColor="@color/black"
-        android:text="StudentID: B00787152
-StudentName: James Shiels.
-I confirm that I understand what plagiarism is and have read the University’s policy on
-plagiarism and understand the definition of plagiarism. The work that I have submitted
-is entirely my own. Any work from other authors is duly referenced and acknowledged.
-I understand that I may face sanctions in accordance with the policies and procedures
-of the University.
-" />
+        android:textStyle="bold" />
 </LinearLayout>

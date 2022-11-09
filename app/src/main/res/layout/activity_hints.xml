@@ -36,21 +36,23 @@
 
     <TextView
         android:id="@+id/textViewHint"
-        android:layout_width="385dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="295dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="24dp"
+        android:includeFontPadding="false"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewHint" />
 
     <EditText
         android:id="@+id/editTextHint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="151dp"
+        android:layout_height="66dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
@@ -62,26 +64,37 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/buttonHint"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewHint"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/hintResult"
-        android:layout_width="77dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="130dp"
+        android:layout_height="73dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="104dp"
+        android:textColor="?android:attr/colorPressedHighlight"
+        android:textColorLink="?android:attr/colorPressedHighlight"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHint"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toEndOf="@+id/hintRightWrong"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHint"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/hintRightWrong"
-        android:layout_width="98dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/hintResult"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_width="132dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="104dp"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHint"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

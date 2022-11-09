@@ -26,4 +26,14 @@ public class NewGame extends AppCompatActivity {
         Intent intent = new Intent(this, Hints.class);
         startActivity(intent);
     }
+
+    public void identifyTheCar(View view){
+        Intent intent = new Intent(this, IdentifyTheCar.class);
+        startActivity(intent);
+    }
+
+    public void advancedLevel(View view){
+        Intent intent = new Intent(this, Advanced.class);
+        startActivity(intent);
+    }
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6E2A15"
     tools:context=".NewGame">
 
     <Button
@@ -14,6 +15,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#EA0E0E"
         android:onClick="identifyTheBrand"
         android:text="@string/brandButton"
         app:layout_constraintBottom_toTopOf="@+id/hintsButton"
@@ -29,6 +31,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#2D933B"
         android:onClick="hints"
         android:text="@string/hintsButton"
         app:layout_constraintBottom_toTopOf="@+id/carButton"
@@ -44,6 +47,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="#223CBD"
+        android:onClick="identifyTheCar"
         android:text="@string/carButton"
         app:layout_constraintBottom_toTopOf="@+id/advancedButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +63,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="48dp"
+        android:backgroundTint="#DDC52A"
+        android:onClick="advancedLevel"
         android:text="@string/advancedLevel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

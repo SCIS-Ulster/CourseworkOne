@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
         <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/drawable/ic_launcher_background.xml" value="0.135" />
-        <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/layout/aboutlayout.xml" value="0.1" />
+        <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/layout/aboutlayout.xml" value="0.33" />
+        <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/layout/activity_advanced.xml" value="0.22" />
         <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/layout/activity_hints.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/layout/activity_identify_the_brand.xml" value="0.25" />
+        <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/layout/activity_identify_the_car.xml" value="0.21197916666666666" />
         <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/James/AndroidStudioProjects/CourseworkOne/app/src/main/res/layout/activity_new_game.xml" value="0.22" />
       </map>

@@ -6,11 +6,16 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Locale;
 
 public class Hints extends AppCompatActivity {
 
@@ -23,6 +28,7 @@ public class Hints extends AppCompatActivity {
     EditText hintEdit;
     int counter;
     boolean flag;
+    public static final String TAG = "logs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,35 +41,63 @@ public class Hints extends AppCompatActivity {
         hintEdit = (EditText) findViewById(R.id.editTextHint);
         hintResult = (TextView) findViewById(R.id.hintResult);
         hintRightWrong = (TextView) findViewById(R.id.hintRightWrong);
-        flag = false;
 
         // set random image
         final int rand = randomGen();
         setRandomImage(rand);
 
-        // get brand name and set to uppercase
-        String answer = brands[rand].toUpperCase();
-        System.out.println("HERE" + answer);
+        // get brand name
+        String answer = brands[rand];
 
-        // set dashes to that length
+        // final answer will hold our correct guesses at there index
         int lengthOfAnswer = answer.length();
-        final char[] Y = new char[lengthOfAnswer];
+        final char[] finalAnswer = new char[lengthOfAnswer];
+
+        // Populate dashes text box with dashes of brand length
         for(int i = 0; i < lengthOfAnswer; i++){
             hintText.setText(hintText.getText() + "_");
-            Y[i] = '_';
+            finalAnswer[i] = '_';
         }
+
+        // Check if any text in box, if there is let user hit button
+        // Without this the user can hit the button with empty text and we get an error.
+        button.setEnabled(false);
+        hintEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.toString().trim().length() == 0){
+                    button.setEnabled(false);
+                }else{
+                    button.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // get users guess
-                String x = hintEdit.getText().toString().toUpperCase();
+                // get the char input
+                String stringInput = hintEdit.getText().toString();
+                char input = stringInput.charAt(0);
                 // clear edittext box
                 hintEdit.setText("");
+
+                // set flag to false
+                flag = false;
                 // check input against answer
                 for(int i = 0; i < lengthOfAnswer; i++){
-                    if(x.charAt(0) == answer.charAt(i)){
-                        Y[i] = answer.charAt(i);
+                    if(input == answer.charAt(i)){
+                        finalAnswer[i] = answer.charAt(i);
                         // if any are found set flag to true
                         flag = true;
                     }
@@ -74,12 +108,12 @@ public class Hints extends AppCompatActivity {
                 }
 
                 // add correct chars to final string
-                String newString = new String(Y);
+                String newString = new String(finalAnswer);
 
                 // If its right
                 if(newString.equals(answer)){
-                    hintResult.setText(answer);
                     button.setText("Next");
+                    button.setEnabled(true);
                     hintRightWrong.setText("CORRECT");
                     hintRightWrong.setTextColor(Color.GREEN);
                     button.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +127,9 @@ public class Hints extends AppCompatActivity {
                 // if lives are gone
                 if(counter == 3){
                     hintResult.setText(answer);
+                    button.setEnabled(true);
                     button.setText("Next");
-                    hintRightWrong.setText("WRONG");
-                    hintRightWrong.setTextColor(Color.RED);
+                    hintRightWrong.setText("WRONG!");
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -118,7 +152,7 @@ public class Hints extends AppCompatActivity {
 
     public int randomGen(){
         int max = 10;
-        int min = 1;
+        int min = 0;
         int range = max - min;
         int rand = ((int)(Math.random() * range)) + min;
         return rand;

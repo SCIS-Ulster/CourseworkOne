@@ -40,22 +40,21 @@ public class IdentifyTheBrand extends AppCompatActivity implements AdapterView.O
         spin.setAdapter(adapter);
         spin.setOnItemSelectedListener(this);
 
-        // set up random image
+        // set up
         imageView = (ImageView) findViewById(R.id.imageView);
         button = (Button) findViewById(R.id.submitButton);
+        result = (TextView) findViewById(R.id.textView2);
+        brandName = (TextView) findViewById(R.id.textView3);
 
         // set random image
         int rand = randomGen();
         setRandomImage(rand);
 
-        //Get dropdown string value
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Get dropdown string value
                 String submittedAnswer = spin.getSelectedItem().toString();
-                result = (TextView) findViewById(R.id.textView2);
-                brandName = (TextView) findViewById(R.id.textView3);
-
 
                 if(submittedAnswer.equals(brands[rand])){
                     result.setTextColor(Color.GREEN);
@@ -70,6 +69,7 @@ public class IdentifyTheBrand extends AppCompatActivity implements AdapterView.O
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
                         startActivity(getIntent());
                     }
                 });
@@ -102,7 +102,7 @@ public class IdentifyTheBrand extends AppCompatActivity implements AdapterView.O
 
     public int randomGen(){
         int max = 10;
-        int min = 1;
+        int min = 0;
         int range = max - min;
         int rand = ((int)(Math.random() * range)) + min;
         return rand;
